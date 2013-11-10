@@ -89,7 +89,7 @@ if(!$Error->ErrorPresent()){
 		$uid = $db->getLastID();
 		$salt = hashMe(uniqid()) ;
 		$rooms = new Rooms();
-		$rooms->buildModel("default");
+		$rooms->buildModel("default", safe($_POST['pseudo'],'SQL'));
 		$Auth->setSaltUsers($uid);
 
 		$d = date('Y-m-d') ;
