@@ -20,7 +20,12 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 
 -- --------------------------------------------------------
-
+CREATE TABLE IF NOT EXISTS `habbophp_dedis` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 CREATE TABLE `habbophp_shop_rares` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
@@ -121,6 +126,7 @@ INSERT INTO `habbophp_config` VALUES(58, 'winwin', '10000');
 INSERT INTO `habbophp_config` VALUES(59, 'winwinprix', '100');
 INSERT INTO `habbophp_config` VALUES(59, 'server_base', '100');
 INSERT INTO `habbophp_config` VALUES('','desc_index', '');
+INSERT INTO `habbophp_config` VALUES(62,'dedirix', '0');
 
 CREATE TABLE `habbophp_shop_rares` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
