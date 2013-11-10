@@ -3,7 +3,6 @@ if(!Tools::checkACL($user->rank, ACL_ROOM_DEFAULT_REGISTER)){
 	header("Location: /admin/");
 	die();
 }
-$success = false;
 ?>
 <header class="jumbotron subhead" id="overview">
   <h1>Apparts</h1>
