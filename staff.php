@@ -25,7 +25,7 @@ $rank = array(
 
 foreach($rank as $ranks){ $minRanks[] = $ranks['Rank'] ; } //On fait un array des ranks
 array_multisort($minRanks,SORT_NUMERIC); // On les tri par ordre croissant
-$query=$db->query("SELECT rank,username,motto,id,look FROM users WHERE rank>=".intval($minRanks[0]),true);
+$query = ORM::for_table("users")->where_raw("rank>=".intval($minRanks[0])."")->find_many();
 $tpl->assign('user_info',$query);
 $tpl->assign('rank',$rank);
 
