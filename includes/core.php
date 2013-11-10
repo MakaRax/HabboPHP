@@ -108,6 +108,16 @@ require	$path.'class/rooms.class.php' ;
 
 require	$path.'class/groups.class.php' ;
 
+require $path.'class/class.orm.php';
+
+/*+===================================+
+|   Connexion to ORM  database        |
++===================================+*/
+
+ORM::configure('mysql:host='.HOST.';dbname='.NAME_DB.'');
+ORM::configure('username', ''.USER_DB.'');
+ORM::configure('password', ''.PASSWORD_DB.'');
+ORM::configure('drivers_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 /*+===================================+
 |   Connexion to database             |
