@@ -78,7 +78,7 @@ class Rooms{
 		}
 	}
 	
-	public function buildModel($model){
+	public function buildModel($model, $username){
 		try{
 			$dom = new DomDocument();
 			$dom->Load($this->loadModel($model));
