@@ -25,6 +25,9 @@
 <?php if(Tools::checkACL($user->rank,ACL_MENU_FORM)){ ?><li class="<?php if($pagename=="manage_forms.php" OR $pagename=="edit_form.php") {echo "active"; } ?>">
 <a href="<?php echo $config->url_site ;?>/admin/form/manage_forms.php">Formulaires</a>
 </li><?php } ?>
+<?php if(Tools::checkACL($user->rank,ACL_ROOM_DEFAULT_REGISTER)){ ?><li class="<?php if($pagename=="manage_forms.php" OR $pagename=="edit_form.php") {echo "active"; } ?>">
+<a href="<?php echo $config->url_site ;?>/admin/rooms.php">Apparts</a>
+</li><?php } ?>
 <li>
 <a href="<?php echo $config->url_site ;?>" target=="_blanck" >Retourner sur le site</a>
 </li>
