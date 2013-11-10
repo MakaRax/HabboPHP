@@ -76,4 +76,7 @@ define('ACL_PAGES_VIEW','6;7;8');
 //Form
 define('ACL_FORM_MANAGE','6;7;8');
 
+//Rooms
+define('ACL_ROOM_DEFAULT_REGISTER', '7;8');
+
 ?>
