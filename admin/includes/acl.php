@@ -29,6 +29,7 @@ define('ACL_MENU_HELP','6;7;8');
 define('ACL_MENU_LOGS','6;7;8');
 define('ACL_MENU_PAGE','6;7;8');
 define('ACL_MENU_FORM','6;7;8');
+define('ACL_MENU_ROOM','7;8');
 
 
 //Serveur
