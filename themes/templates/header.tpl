@@ -143,17 +143,9 @@ body { behavior: url(/js/csshover.htc); }
 <div id="header-container">
 	<div id="header" class="clearfix">
 		<h1><a href="{$config->url_site}/me.php"></a></h1>
-<div id="subnavi"> 
-			<div id="subnavi-user"> 
-				<ul> 
-					<li id="myfriends"><a href="#"><span>Mes Amis</span></a><span class="r"></span></li> 
-					
-					<li id="myrooms"><a href="#"><span>Mes Apparts</span></a><span class="r"></span></li> 
-				</ul> 
-						</div> 
-			            <div id="subnavi-search" style="text-align:left;"> 
+<div id="subnavi"> 			            <div id="subnavi-search" style="text-align:left;"> 
                 <div id="subnavi-search-upper"> 
-                <ul id="subnavi-search-links"> 
+                <ul id="subnavi-search-links">
                     <li><a href="{$config->url_site}/help" target="_new">Questions fréquentes</a></li> 
 					<li>
 					<form method="post" action="{$config->url_site}/logout.php">
@@ -249,8 +241,11 @@ body { behavior: url(/js/csshover.htc); }
     		<li class="{if $url eq 'winwin.php'}selected{/if}">
     			<a href="{$config->url_site}/winwin.php">{#BuyWinWins#}</a>
     		</li>
-    		<li class="{if $url eq 'bots.php'}selected{/if} last">
+    		<li class="{if $url eq 'bots.php'}selected{/if}">
     			<a href="{$config->url_site}/bots.php">{#BuyBots#}</a>
+    		</li>
+    		<li class="{if $url eq 'dedi.php'}selected{/if} last">
+    			<a href="{$config->url_site}/dedi.php">Dédicaces</a>
     		</li>
     		
 	</ul>
@@ -298,3 +293,14 @@ function get(){
 setInterval('get()', 5000);
 </script>
 <input type="hidden" value="{if isset($token)}{$token}{/if}" id="token"/>
+<div id="container">
+<div id="content" class="clear fix" style="position:relative; width:83%;">
+		 <div class="habblet-container">
+	<div class="cbb clearfix settings">
+		<div class="box-content" style="padding:5px;">
+			<marquee onmouseover="this.stop();" onmouseout="this.start();">{foreach from=$dedis key=k item=d}<a href="home.php?username={$d.username}"><u><b>{$d.username}</b></u></a> : {$d.message} - {/foreach} Poste ta dédicace <a href="dedi.php">ici.</a></marquee>
+		</div>
+	</div>
+</div>
+</div>
+</div>
