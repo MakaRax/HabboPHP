@@ -134,8 +134,16 @@ $admin=true;
             
           </div>
           
+           <div class="control-group">
+            <label class="control-label" for="input01">Prix des dédicaces</label>
+            <div class="controls">
+              <input type="text" value="<?php echo $config->dediprix; ?>" class="dprix" id="dprix">
+            </div>
+            
+          </div>
+          
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary" onclick="setconfig($('#moneyname').val(),'moneyname');setconfig($('#vip').val(),'vipprice');setconfig($('#wget').val(),'winwin');setconfig($('#wprix').val(),'winwinprix');setconfig($('#bprix').val(),'botsprix');setconfig($('#lookbots').val(),'lookbots');"><?php echo $lang['Update']; ?></button>
+            <button type="submit" class="btn btn-primary" onclick="setconfig($('#moneyname').val(),'moneyname');setconfig($('#vip').val(),'vipprice');setconfig($('#wget').val(),'winwin');setconfig($('#wprix').val(),'winwinprix');setconfig($('#bprix').val(),'botsprix');setconfig($('#lookbots').val(),'lookbots');setconfig($('#dprix').val(),'dediprix')"><?php echo $lang['Update']; ?></button>
           </div>
         </fieldset>
       </div>
