@@ -65,7 +65,7 @@ $step = (isset($_GET['step'])) ? intval($_GET['step']) : '1';
 		</tr>
 		<tr>
 			<th scope="row"><label for="pwd">Mot de passe</label></th>
-			<td><input name="pwd" id="pwd" type="text" size="25" value="" /></td>
+			<td><input name="pwd" id="pwd" type="password" size="25" value="" /></td>
 			<td>&hellip;et son mot de passe MySQL.</td>
 		</tr>
 		<tr>
@@ -107,7 +107,7 @@ $step = (isset($_GET['step'])) ? intval($_GET['step']) : '1';
 		</tr>
 		<tr>
 			<th scope="row"><label for="uname">Mot de passe Admin</label></th>
-			<td><input name="pwd" id="pwd" type="text" size="25" value="" /></td>
+			<td><input name="pwd" id="pwd" type="password" size="25" value="" /></td>
 		</tr>
 		<tr>
 			<th scope="row"><label for="pwd">Nom du rétro</label></th>
