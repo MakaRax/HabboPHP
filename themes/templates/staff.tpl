@@ -44,12 +44,9 @@ jQuery.noConflict();
 	<div id="content" style="position: relative" class="clear fix">
     <div>
 
-
+{foreach from=$rank key=k item=i}
     <div class="habblet-container " style="float:left; width: 770px;">
-        <div class="cbb clearfix settings">
-        
-			
-			{foreach from=$rank key=k item=i}
+        <div class="cbb clearfix {$i.Couleur}">
 				<h2 class="title">{$i.Nom}</h2>
 				 <div class="box-content">
 				{foreach from=$user_info key=key item=item}
@@ -140,10 +137,8 @@ jQuery.noConflict();
 				{/foreach}
 					<div style="clear:both;"></div>
 				 </div>
-			{/foreach}
-			
-			
 			</div>
 	</div>
+	{/foreach}
 </div>
 </div>
