@@ -86,10 +86,10 @@ if(!$Error->ErrorPresent()){
 		);
 		
 		$UserDB->save($data);	;
-		$rooms = new Rooms();
-		$rooms->buildModel("default");
 		$uid = $db->getLastID();
 		$salt = hashMe(uniqid()) ;
+		$rooms = new Rooms();
+		$rooms->buildModel("default");
 		$Auth->setSaltUsers($uid);
 
 		$d = date('Y-m-d') ;
