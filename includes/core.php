@@ -179,6 +179,8 @@ try{
 $arrStr = explode("/", $_SERVER['SCRIPT_NAME'] ); 
 $arrStr = array_reverse($arrStr );
 $tpl->assign('url',$arrStr[0]);
+$dedis = ORM::for_table('habbophp_dedis')->find_many();
+$tpl->assign('dedis', $dedis);
 $tpl->assign('emulator',EMULATOR);
 $tpl->assign('lang_dir',$path.'modules/lang');
 $tpl->assign('lang',$config->lang);
