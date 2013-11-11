@@ -120,16 +120,16 @@ jQuery.noConflict();
 					
 					 <a href="home.php?username={$item.username}" style="color:black;"><div style="width:100px" class="ssh" id="tt{$item.id}" onmouseover="jQuery('#one{$item.id}').hide();jQuery('#slideshow{$item.id}').show();" onmouseout="jQuery('#slideshow{$item.id}').hide();jQuery('#one{$item.id}').show();">
 <div id="slideshow{$item.id}" style="display:none;">
-<img id="f1" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=0&head_direction=0&gesture=std&size=l&img_format=gif" class="active" />
-<img id="f2" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=1&head_direction=1&gesture=std&size=l&img_format=gif" />
-<img id="f3" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=2&head_direction=2&gesture=std&size=l&img_format=gif" />
-<img id="f4" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=3&head_direction=3&gesture=std&size=l&img_format=gif" />
-<img if="f5" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=4&head_direction=4&gesture=std&size=l&img_format=gif" />
-<img id="f6" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=5&head_direction=5&gesture=std&size=l&img_format=gif" />
-<img id="f7" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=6&head_direction=6&gesture=std&size=l&img_format=gif" />
-<img id="f8" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=7&head_direction=7&gesture=std&size=l&img_format=gif" />
+<img id="f1" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=0&head_direction=0&gesture=std&size=b&img_format=gif" class="active" />
+<img id="f2" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=1&head_direction=1&gesture=std&size=b&img_format=gif" />
+<img id="f3" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=2&head_direction=2&gesture=std&size=b&img_format=gif" />
+<img id="f4" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=3&head_direction=3&gesture=std&size=b&img_format=gif" />
+<img if="f5" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=4&head_direction=4&gesture=std&size=b&img_format=gif" />
+<img id="f6" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=5&head_direction=5&gesture=std&size=b&img_format=gif" />
+<img id="f7" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=6&head_direction=6&gesture=std&size=b&img_format=gif" />
+<img id="f8" src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=7&head_direction=7&gesture=std&size=b&img_format=gif" />
 </div>
-<img src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=3&head_direction=3&gesture=std&size=l&img_format=gif" id="one{$item.id}" /><br/>
+<img src="http://www.habbr.info/habbo-imaging/avatarimage?figure={$item.look}&direction=3&head_direction=3&gesture=std&size=b&img_format=gif" id="one{$item.id}" /><br/>
 <b style="width:60px;word-wrap: break-word;">{$item.username}</b><br /><br/></div></a>
 					 
 				
