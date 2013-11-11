@@ -35,3 +35,12 @@ Redesign of the architecture
 * App Secret: ce554bc14dbea0457fb72dc7f51b1ad0 (exemple)
 * Complétez AppID & AppSecret dans votre administration Site > Connexion avec Facebook
 
+## Utilisation du système d'apparts
+
+Depuis cette mise à jour, il est possible de créer un appart à l'inscription d'un utilisateur.
+* Pour se faire, rendez-vous dans l'administration côté Apparts.
+* Rentrez l'identifiant de l'appart à créer à l'inscription dans le champ (il doit exister).
+* Faites en sorte que le fichier /modules/rooms/default.xml soit chmodé (777).
+* Si il l'est, le fichier sera écrit tout seul, sinon faites le vous même.
+* Le système fait le reste =D
+
