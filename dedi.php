@@ -26,6 +26,7 @@
 			$dedis->username = $user->username;
 			$dedis->message = $message;
 			$dedis->save();
+			if($user->deleteJetons($config->botsprix)); echo '' ;
 		}
 	}
 	$tpl->assign('groups', 'shop');
