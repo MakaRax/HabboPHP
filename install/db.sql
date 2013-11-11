@@ -126,7 +126,7 @@ INSERT INTO `habbophp_config` VALUES(58, 'winwin', '10000');
 INSERT INTO `habbophp_config` VALUES(59, 'winwinprix', '100');
 INSERT INTO `habbophp_config` VALUES(59, 'server_base', '100');
 INSERT INTO `habbophp_config` VALUES('','desc_index', '');
-INSERT INTO `habbophp_config` VALUES(62,'dedirix', '0');
+INSERT INTO `habbophp_config` VALUES(62,'dediprix', '0');
 
 CREATE TABLE `habbophp_shop_rares` (
   `id` int(6) NOT NULL AUTO_INCREMENT,
