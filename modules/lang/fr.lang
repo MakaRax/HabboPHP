@@ -285,6 +285,8 @@ error_motto_bot = Quelle mission pour ton bot ?
 error_sentence_bot = Un bot ça parle :)
 error_roomid_bot = WTF ?
 error_jetons = Tu n'as pas assez de jetons
+dedi_error_long = Ta dédicace est trop longue.
+dedi_error_empty = Ta dédicace ne doit pas être vide !
 
 ######################################################
 # Staff
