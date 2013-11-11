@@ -1,4 +1,4 @@
-HabboPHP-Dev-2
+HabboPHP 2.3
 ==============
 
 Redesign of the architecture
