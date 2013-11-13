@@ -12,9 +12,11 @@
 			$tpl->assign('dedi_error_empty', $tpl->getConfigVars('dedi_error_empty'));
 			$error->set('dedi_error_empty', 1);
 		}
-		if($config->dediprix > $user->jetons){
-			$tpl->assign('error_jetons', $tpl->getConfigVars('error_jetons'));
-			$error->set('error_jetons', 1);
+		if($config->dediprix != 0){
+			if($config->dediprix > $user->jetons){
+				$tpl->assign('error_jetons', $tpl->getConfigVars('error_jetons'));
+				$error->set('error_jetons', 1);
+			}
 		}
 		if($error->ErrorPresent())
 		{
