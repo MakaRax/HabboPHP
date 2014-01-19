@@ -14,7 +14,6 @@ $tpl->assign('rooms',$Rooms->getRoomsUser());
 
 /* Whitout Ajax */
 
-
 if(isset($_POST['save'])){
 	$Error = new Error();
 	if(!isset($_POST['name_bot']) or empty($_POST['name_bot'])){
