@@ -15,7 +15,7 @@ var andSoItBegins = (new Date()).getTime();
 <meta name="generator" content="HabboPHP"/>
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/common.css" type="text/css" />
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/fr.css" type="text/css" />
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
   $.noConflict();
   // Code that uses other library's $ can follow here.
