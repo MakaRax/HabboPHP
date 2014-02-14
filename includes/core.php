@@ -158,29 +158,28 @@ if(isset($_SESSION['uid']) && !empty($_SESSION['uid']) && is_numeric($_SESSION['
 +===================================+*/
 
 //Configuration smarty
-$tpl->force_compile = true ; //TRUE : Developpement ; FALSE : Production
+$tpl->force_compile = true ; //TRUE : Developpement ; FALSE : Production | Ne balancez pas en prod si vos modifs ne sont pas FINIES et testées.
 //$tpl->cache_lifetime = 900; //Temps d'expiration du cache en seconde
 $tpl->compile_check = false;
 $tpl->debugging = false; 
 $tpl->debugging_ctrl = 'NONE'; // 'NONE' on production
 $tpl->caching = false;
 
-
 try{
 	$tpl->template_dir = 	$path.'themes/templates/';
 	$tpl->compile_dir = 	$path.'themes/templates/templates_c/';
 	$tpl->config_dir = 		$path.'modules/lang/';
-
 } catch (SmartyException $e) {
-
+	echo $e->getMessage();
 }
 
-//Variable du template
 $arrStr = explode("/", $_SERVER['SCRIPT_NAME'] ); 
 $arrStr = array_reverse($arrStr );
 $tpl->assign('url',$arrStr[0]);
 $dedis = ORM::for_table('habbophp_dedis')->find_many();
 $tpl->assign('dedis', $dedis);
+$notifs = ORM::for_table('habbophp_notifications')->count();
+$tpl->assign('notifs_count', $notifs);
 $tpl->assign('emulator',EMULATOR);
 $tpl->assign('lang_dir',$path.'modules/lang');
 $tpl->assign('lang',$config->lang);
@@ -188,18 +187,25 @@ $tpl->assignByRef('config', $config);
 $tpl->assignByRef('user', $user);
 $tpl->configLoad($path.'modules/lang/'.$config->lang.'.lang');
 define('SMARTY_DEBUG_CONSOLE', false); 
+$k_public = '6LenR88SAAAAAMcaw4UWGvAUyDD_HIj97eUBsNhf';
+$privatekey = '6LenR88SAAAAAGhwPRprdBpxYR1D591QjX-TVgB9';
+$tpl->assign('captcha',recaptcha_get_html($k_public));
+$tpl->assign('public_key',$k_public);
 
-	$k_public = '6LenR88SAAAAAMcaw4UWGvAUyDD_HIj97eUBsNhf';
-	$privatekey = '6LenR88SAAAAAGhwPRprdBpxYR1D591QjX-TVgB9';
-	$tpl->assign('captcha',recaptcha_get_html($k_public));
-	$tpl->assign('public_key',$k_public);
+/*+===================================+
+|    Nouvelle API Twitter             |
++===================================+*/
+$twitter = explode(';', $config->twitter); // Démarquation de l'utilisateur et de l'id du widget créé sur Twitter Devs stockés sur habbophp_config entrée twitter.
+$tpl->assign('twitter_user', $twitter[0]);
+$tpl->assign('twitter_widget_id', $twitter[1]);
+
+if(!isset($twitter[1])){
+	$twitter[1] = "";
+}
 
 /*+===================================+
 |    Gestion des erreurs              |
 +===================================+*/
-
-
-
 if (!isset($_SERVER['REQUEST_URI']) OR empty($_SERVER['REQUEST_URI']))
 {
 	if (substr($_SERVER['SCRIPT_NAME'], -9) == 'index.php' && empty($_SERVER['QUERY_STRING']))

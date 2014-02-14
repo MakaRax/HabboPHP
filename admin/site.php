@@ -640,10 +640,11 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
     </div>
     <div class="span9">
       <div class="well">
-        <input type="text" class="span3" id="twittervalue" value="<?php echo $config->twitter; ?>" placeholder="<?php echo $lang['TwitterPlaceHolder']; ?>">
+        <input type="text" class="span3" id="twittervalue" value="<?php echo $twitter[0]; ?>" placeholder="Pseudo">
+        <input type="text" class="span3" id="twitterwidget" value="<?php echo $twitter[1]; ?>" placeholder="Id du widget créé">
         <label class="checkbox">
         </label>
-        <button type="button" onclick="setconfig($('#twittervalue').val(),'twitter');" class="btn btn-info"><?php echo $lang['Update']; ?></button>
+        <button type="button" onclick="setconfig($('#twittervalue').val() + ';' + $('#twitterwidget').val(),'twitter');" class="btn btn-info"><?php echo $lang['Update']; ?></button>
       </div>
     </div>
   </div>

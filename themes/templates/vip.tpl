@@ -9,14 +9,14 @@
 
 <style>
 .bigbulle {
-background:url(images/bulle.png) no-repeat;width:764px;height:58px;
+background:url(themes/images/bulle.png) no-repeat;width:764px;height:58px;
 text-align: center;font-size:24px;color:white;
 padding-top:11px;
 text-decoration:none;
 text-shadow:0 1px 0 #1f6000;
 }
 .bigbulle:hover {
-background:url(images/bulleh.png) no-repeat;
+background:url(themes/images/bulleh.png) no-repeat;
 }
 </style>
 <a href="javascript:void(0);" id="buttonn" onclick="{literal}jQuery('#ok').animate({opacity:0}, function() {jQuery('#okt').slideUp('slow',function(){ jQuery('#go').slideDown('slow',function(){ jQuery('#go').animate({opacity:1}); jQuery('.bigbulle').animate({opacity:0}, function() {jQuery('.bigbulle').slideUp('fast',function() { jQuery('#goc').slideDown('fast',function() { jQuery('#goc').animate({opacity:1}); }); });}); }); });});{/literal}" style="text-decoration:none;"><div class="bigbulle">
@@ -125,7 +125,7 @@ background:url(images/bulleh.png) no-repeat;
  
   <div class="cbb hcvip habboclub-infoentry">
    <h2 class="title" style="height: 53px; background-color: #969696;">
-    <img style="position: relative; top: 5px" alt="xx" src="http://cdn.1.habbodreams.fr/images/habboclub_vip_big.png" />
+    <img style="position: relative; top: 5px" alt="xx" src="web-gallery/images/habboclub_vip_big.png" />
    </h2> 
    <div style="height: 3px"></div>
 

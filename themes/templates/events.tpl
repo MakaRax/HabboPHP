@@ -56,7 +56,7 @@
 </div></div>
 </div>
     <div class="habblet-container " style="float:left; width: 560px;">
-        <div class="cbb clearfix">
+        <div class="cbb clearfix blue ">
 
             <h2 class="title" >{$title}</h2>
             <div class="box-content">

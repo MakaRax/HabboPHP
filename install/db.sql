@@ -14,10 +14,53 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
+--
+-- Structure de la table `habbophp_forum_categories`
+--
+
+CREATE TABLE IF NOT EXISTS `habbophp_forum_categories` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `value` varchar(255) NOT NULL,
+  `min_rank_view` int(11) NOT NULL,
+  `min_rank_post` int(11) NOT NULL,
+  `all_threads` enum('0','1') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+ 
+-- --------------------------------------------------------
 
 --
--- Base de données: `phoenix`
+-- Structure de la table `habbophp_forum_comments`
 --
+
+CREATE TABLE IF NOT EXISTS `habbophp_forum_comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `thread_id` int(11) NOT NULL,
+  `message` text NOT NULL,
+  `date_created` int(255) NOT NULL,
+  `author_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `thread_id` (`thread_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `habbophp_forum_threads`
+--
+
+CREATE TABLE IF NOT EXISTS `habbophp_forum_threads` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `body` text NOT NULL,
+  `views` int(255) NOT NULL,
+  `author` varchar(60) NOT NULL,
+  `date_created` int(255) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `closed` enum('0','1') NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `category_id` (`category_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `habbophp_dedis` (

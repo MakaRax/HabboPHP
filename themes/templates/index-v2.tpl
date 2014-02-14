@@ -18,8 +18,8 @@
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic,700italic">
 
-<link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/v3_landing.css" type="text/css" />
-<script src="{$config->url_site}/web-gallery/js/v3_landing_top.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://images-eussl.habbo.com/habboweb/63_1dc60c6d6ea6e089c6893ab4e0541ee0/2245/web-gallery/static/styles/v3_landing.css" type="text/css" />
+<script src="https://images-eussl.habbo.com/habboweb/63_1dc60c6d6ea6e089c6893ab4e0541ee0/2245/web-gallery/static/js/v3_landing_top.js" type="text/javascript"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="{$config->url_site}/web-gallery/js/index.js" type="text/javascript"></script>
 
@@ -112,16 +112,16 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
     
     <div id="login-columns">
         <div id="login-column-1">
-            <label for="credentials-email">Email</label>
-            <input tabindex="2" type="text" name="username" id="credentials-email" value="">
-            <input tabindex="5" type="checkbox" name="_login_remember_me" id="credentials-remember-me">
+            <label for="credentials-email">Adresse mail</label>
+            <input tabindex="2" type="text" name="username" id="credentials-email" style="border-radius:3px; border: 2px solid rgba(0,0,0,0);" value="">
+            <input tabindex="5" type="checkbox" name="remember-me" id="credentials-remember-me">
             <label for="credentials-remember-me" class="sub-label">Garder ma session active</label>
         </div>
 
         <div id="login-column-2">
             <label for="credentials-password">Mot de passe</label>
-            <input tabindex="3" type="password" name="password" id="credentials-password">
-            <a href="#" id="forgot-password" class="sub-label">Mot de passe oublié?</a>
+            <input tabindex="3" type="password" name="password" id="credentials-password" style="border-radius:3px; border: 2px solid rgba(0,0,0,0);" value="">
+            <a style="display:none;" href="#" id="forgot-password" class="sub-label">Mot de passe oublié?</a>
         </div>
 
         <div id="login-column-3">
@@ -170,7 +170,7 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
      {/literal}
   	if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }
 </script>
-<a class="fb_button fb_button_large" onclick="assistedLogin(FB); return false;">
+<a style="display:none;" class="fb_button fb_button_large" onclick="assistedLogin(FB); return false;">
     <span class="fb_button_text">Entre avec Facebook</span>
 </a>
 
@@ -235,8 +235,8 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
 
 
 <div id="content">
-    <ul>
-        <li id="home-anchor">
+    <ul style="transition: all 1450ms ease-in-out; -webkit-transition: all 1450ms ease-in-out; background-color: rgb(10, 51, 68);">
+        <li id="home-anchor" class="home-anchor-day" style="transition: all 650ms ease-in-out; -webkit-transition: all 650ms ease-in-out; top: -2000px; background-position: 475px -1200px;">
             <div id="welcome">
                 <a href="#registration" class="button large" id="join-now-button"><b></b><span>Rejoins-nous aujourd'hui</span><span class="sub">(C'est gratuit)</span></a>
                 <div id="slogan">
@@ -254,7 +254,7 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
             <div id="floaters"></div>
         </li>
 
-        <li id="registration-anchor">
+        <li id="registration-anchor" style="background-image: url(https://habboo-a.akamaihd.net/c_images/xmas2013graphicalassets/XmasBuildersClub_RegistrationPage_v3.png); transition: all 1450ms ease-in-out; -webkit-transition: all 1450ms ease-in-out; top: 0px; background-position: 800px 124px;">
 
 <div id="registration-form">
     <div id="registration-form-header">

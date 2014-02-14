@@ -22,6 +22,8 @@ $newsData=$db->query("SELECT * FROM habbophp_news WHERE id=".$id." LIMIT 1",true
 if($newsData != NULL){
 	$tpl->assign('title',$newsData['title']);
 	$tpl->assign('content',$newsData['content']);
+	$tpl->assign('short', $newsData['short']);
+	$tpl->assign('date', $newsDate['date']);
 	$tpl->assign('news_existe','true');
 	$tpl->assign('displayComment',$newsData['comment']);
 }
