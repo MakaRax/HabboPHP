@@ -11,7 +11,7 @@
 		if(!defined('VERSION')){
 			define('VERSION','Version inconnue');
 		}
-			echo'<div class="alert alert-error"><b>Attention</b> : Le site de HabboPHP est indisponible.<b><a href="https://github.com/habbophp/HabboPHP/archive/master.zip">'.file_get_contents('http://release.habbophp.com').'</a></b></div>';
+			echo'<div class="alert alert-error"><b>Attention</b> : Le site de HabboPHP est indisponible.</div>';
 		?>
 		<div class="alert alert-info">Votre version HabboPHP : <b><?php echo VERSION ; ?></b></div>
 	</div>
