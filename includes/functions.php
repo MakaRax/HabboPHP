@@ -360,13 +360,13 @@ function checked($source,$compare,$input){
 function VersionIsLast(){
 	//Get last version
 	if(defined('VERSION')){
-		//$data = file_get_contents('http://release.habbophp.com');
+		$data = file_get_contents('http://release.habbophp.com');
 		
 		//Compare
-		//if(VERSION == $data)
-		//	return true;
+		if(VERSION == $data)
+			return true;
 		}
-	return true;
+	return false;
 }
 
 ?>
