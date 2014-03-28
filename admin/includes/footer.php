@@ -51,7 +51,6 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-	new nicEditor().panelInstance('tai');    
 	$('.tabs a:first').tab('show')
 	var token = $('#token').val();
 	$("#paging_buttonn a").click(function(){
