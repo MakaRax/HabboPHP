@@ -43,8 +43,10 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
-    <script src="assets/js/w.js" type="text/javascript"></script>
-	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+    <script>
+    	tinymce.init({selector:'textarea'});
+    </script>
 						
 
 <script type="text/javascript">
