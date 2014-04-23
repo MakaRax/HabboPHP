@@ -369,6 +369,7 @@ function VersionIsLast(){
 	return false;
 }
 
+<<<<<<< HEAD
 function HotelIsOnline(){
 	$sql = ORM::for_table('server_status')->select('status')->find_one();
 	if($sql['status'] == 1)
@@ -376,4 +377,6 @@ function HotelIsOnline(){
 	return false;
 }
 
+=======
+>>>>>>> 76089e7ab762f43b1f2c4fdf640ea94eb5019966
 ?>
