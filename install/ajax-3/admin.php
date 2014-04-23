@@ -1,14 +1,8 @@
 <?php
 include "../../includes/settings.inc.php";
 include "../../includes/functions.php";
-if(isset($_POST['action'])){
-	rmdir('../install/');
-	$return = array();
-	$return[] = 'Le dossier install a bien été supprimé, <a href="index.php">cliquez ici</a> pour aller sur l\'accueil';
-
-} else {
-	mysql_connect(HOST,USER_DB,PASSWORD_DB);
-	mysql_select_db(NAME_DB);
+mysql_connect(HOST,USER_DB,PASSWORD_DB);
+mysql_select_db(NAME_DB);
 	if(empty($_POST['login'])) die ('Login ?');
 	if(empty($_POST['pwd'])) die ('Un mot de passe ?');
 	if(empty($_POST['nom_retro'])) die ('Un nom pour ton beau rétro ?');
@@ -21,5 +15,4 @@ if(isset($_POST['action'])){
 	mysql_query("UPDATE habbophp_config SET value='".$_POST['nom_retro']."' WHERE name='name'") or die('Error mysql (nom rétro)');
 
 	echo 'true';
-}
 ?>

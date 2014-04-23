@@ -25,8 +25,8 @@ class Auth{
 	
 	private function isBan($username){
 	global $config ;
-			$data = mysql_query("SELECT * FROM bans WHERE value = '".$username."' OR value ='".$_SERVER['REMOTE_ADDR']."' LIMIT 1",true,false);	
-			if(mysql_num_rows($data) == "1"){
+			$data = $this->_db->query("SELECT * FROM bans WHERE value = '".$username."' OR value ='".$_SERVER['REMOTE_ADDR']."' LIMIT 1",true,false);	
+			if($data){
 				if(time() > $data['expire']){
 					$req = $this->_db->query('DELETE FROM bans WHERE id='.safe($data['id'],'SQL'));	
 					return false ;

@@ -50,8 +50,8 @@ include "includes/header.php";
 		<?php
 			$per_page = 5;
 			$sql = "select * from habbophp_news_images";
-			$rsd = mysql_query($sql);
-			$count = mysql_num_rows($rsd);
+			$rsd = $db->query($sql);
+			$count = $db->NumRowsC();
 			$pages = ceil($count/$per_page);
 		?>
 	
@@ -146,7 +146,7 @@ include "includes/header.php";
           
           <div class="form-actions">
             <button type="button" onclick="postnews($('#linkimagenews').val(),$('#titlenews').val(),$('#shortdescnews').val(),$('.nicEdit-main').html(),$('#comments').val(),$('#boutton_texte').val(),$('#button_display').val(),$('#button_link').val())" class="btn btn-primary"><?php echo $lang['SendMyNews']; ?></button>
-          </div>
+	  </div>
         </fieldset>
       </div>
 
@@ -640,11 +640,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js"&gt;
     </div>
     <div class="span9">
       <div class="well">
-        <input type="text" class="span3" id="twittervalue" value="<?php echo $twitter[0]; ?>" placeholder="Pseudo">
-        <input type="text" class="span3" id="twitterwidget" value="<?php echo $twitter[1]; ?>" placeholder="Id du widget créé">
+        <input type="text" class="span3" id="twittervalue" value="<?php echo $config->twitter; ?>" placeholder="<?php echo $lang['TwitterPlaceHolder']; ?>">
         <label class="checkbox">
         </label>
-        <button type="button" onclick="setconfig($('#twittervalue').val() + ';' + $('#twitterwidget').val(),'twitter');" class="btn btn-info"><?php echo $lang['Update']; ?></button>
+        <button type="button" onclick="setconfig($('#twittervalue').val(),'twitter');" class="btn btn-info"><?php echo $lang['Update']; ?></button>
       </div>
     </div>
   </div>

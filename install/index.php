@@ -128,21 +128,10 @@ $step = (isset($_GET['step'])) ? intval($_GET['step']) : '1';
 <?php if($step == 5){ ?>
 <p><strong>Amazing !</strong>
 	Tout est prêt pour commencer à jouer sur ton hotel :)
-	<br/><strong>Tu DOIS supprimer le dossier INSTALL</strong> Sinon une personne peut se faire un compte admin !<br>
-	<a href="#" id="remove-install" class="button button-large">
-		Supprimer le dossier install
-	</a>
-	<div id="append"></div>
-	<script>
-	jQuery(function(){
-		$('#remove-install').click(function(e){
-			e.preventDefault();
-			$.post('ajax-3/admin.php', {action:'remove-install'}, function(data){
-				$('#append').empty().append(data);
-			}, 'json');
-		});
-	});
-	</script>
+	<br/><strong>Tu DOIS supprimer le dossier INSTALL</strong> Sinon une personne peut se faire un compte admin !
+	<?php
+	//	rmdir('ajax-3');
+	?>
 </p>
 <?php } ?>
 <script>

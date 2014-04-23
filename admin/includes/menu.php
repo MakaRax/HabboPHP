@@ -13,9 +13,6 @@
 <?php if(Tools::checkACL($user->rank,ACL_MENU_SHOP)){ ?><li class="<?php if($pagename=="shop.php") {echo "active"; } ?>">
 <a href="<?php echo $config->url_site ;?>/admin/shop.php"><?php echo $lang['Shop']; ?></a>
 </li><?php } ?>
-<?php if(Tools::checkACL($user->rank,ACL_MENU_HELP)){ ?><li class="<?php if($pagename=="help.php") {echo "active"; } ?>">
-<a href="<?php echo $config->url_site ;?>/admin/help.php"><?php echo $lang['Help']; ?></a>
-</li><?php } ?>
 <?php if(Tools::checkACL($user->rank,ACL_MENU_LOGS)){ ?><li class="<?php if($pagename=="logs.php") {echo "active"; } ?>">
 <a href="<?php echo $config->url_site ;?>/admin/logs.php">Logs</a>
 </li><?php } ?>
@@ -25,9 +22,3 @@
 <?php if(Tools::checkACL($user->rank,ACL_MENU_FORM)){ ?><li class="<?php if($pagename=="manage_forms.php" OR $pagename=="edit_form.php") {echo "active"; } ?>">
 <a href="<?php echo $config->url_site ;?>/admin/form/manage_forms.php">Formulaires</a>
 </li><?php } ?>
-<?php if(Tools::checkACL($user->rank,ACL_ROOM_DEFAULT_REGISTER)){ ?><li class="<?php if($pagename=="manage_forms.php" OR $pagename=="edit_form.php") {echo "active"; } ?>">
-<a href="<?php echo $config->url_site ;?>/admin/rooms.php">Apparts</a>
-</li><?php } ?>
-<li>
-<a href="<?php echo $config->url_site ;?>" target=="_blanck" >Retourner sur le site</a>
-</li>

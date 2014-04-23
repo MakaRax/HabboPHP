@@ -46,7 +46,7 @@
             <div class="body">{$news[customer].short}</div>
         </div>
         <a href="http://www.facebook.com/{$config->facebook}" target="_blank" class="facebook-link" onclick="recordOutboundLink('Promo','Horses Facebook Button');"></a>
-        <a href="http://twitter.com/{$twitter_user}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','Horses Twitter Button');"></a>
+        <a href="http://twitter.com/{$config->twitter}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','Horses Twitter Button');"></a>
           {if $news[customer].button_link_display eq 1}
 <div class="enter-hotel-btn">
     <div class="open enter-btn">
@@ -73,7 +73,7 @@
             <div class="body">{$news[customer].short}</div>
         </div>
         <a href="http://www.facebook.com/{$config->facebook}" target="_blank" class="facebook-link" onclick="recordOutboundLink('Promo','SnowStorm Facebook Button');"></a>
-        <a href="http://twitter.com/{$twitter_user}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','SnowStorm Twitter Button');"></a>
+        <a href="http://twitter.com/{$config->twitter}" target="_blank" class="twitter-link" onclick="recordOutboundLink('Promo','SnowStorm Twitter Button');"></a>
           {if $news[customer].button_link_display eq 1}
 <div class="enter-hotel-btn">
     <div class="open enter-btn">
@@ -180,16 +180,53 @@ var discussionMoreDataHelper = new MoreDataHelper("discussions-toggle-more-data-
 					</div>
 				</div>
 				<script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
-       <div class="column" id="column1">
-      <div class="habblet-container">
-        <div id="twitterfeed-habblet-container">
-          <a class="twitter-timeline" href="https://twitter.com/{$twitter_user}" data-widget-id="{$twitter_widget_id}">Tweets de @{$twitter_user}</a>
-{literal}<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>{/literal}
-        </div>
-      </div>
-       </div>
+			 
 
+</div>
+<div id="column1" class="column">
+			     		
+				<div class="habblet-container ">		
+	
+						<div style="float:left;" id="twitterfeed-habblet-container">
 
+<script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'profile',
+  rpp: 4,
+  interval: 30000,
+  width: 453,
+   height: 161,
+  theme: {
+    shell: {
+      background: '#4a4d4f',
+      color: '#ffffff'
+    },
+    tweets: {
+      background: '#ffffff',
+      color: '#4a4d4f',
+      links: '#fe6201'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: false,
+    live: false,
+    behavior: 'all'
+  }
+}).render().setUser('{$config->twitter}').start();
+</script>
+<div style="float:left;">
+{$config->ads300x250}
+</div>
+<div style="clear:both;"></div>
+
+						
+		</div>			
+				</div>
+				<script type="text/javascript">if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }</script>
+				
 			 
 
 </div>

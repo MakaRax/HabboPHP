@@ -15,7 +15,7 @@ var andSoItBegins = (new Date()).getTime();
 <meta name="generator" content="HabboPHP"/>
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/common.css" type="text/css" />
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/fr.css" type="text/css" />
-<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
   $.noConflict();
   // Code that uses other library's $ can follow here.
@@ -31,7 +31,6 @@ var andSoItBegins = (new Date()).getTime();
 <script src="{$config->url_site}/web-gallery/js/homeedit.js" type="text/javascript"></script>
 <script src="{$config->url_site}/web-gallery/js/homeview.js" type="text/javascript"></script>
 <script src="{$config->url_site}/web-gallery/js/homeauth.js" type="text/javascript"></script>
-<script src="{$config->url_site}/web-gallery/js/minimail.js" type="text/javascript"></script>
 <script src="{$config->url_site}/themes/assets/js/jquery.gritter.min.js" type="text/javascript"></script>
 
 <!--End Javascript-->
@@ -47,10 +46,8 @@ var andSoItBegins = (new Date()).getTime();
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/newcredits.css" type="text/css"/>
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/lightweightmepage.css" type="text/css" />
 <link rel="stylesheet" href="{$config->url_site}/themes/assets/css/jquery.gritter.css" type="text/css" />
-<link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/control.textarea.css" type="text/css" />
 <!--End Stylesheet-->
 <link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/group.css" type="text/css" />
-<link rel="stylesheet" href="{$config->url_site}/web-gallery/styles/discussions.css" type="text/css" />
 
 
 
@@ -175,7 +172,7 @@ body { behavior: url(/js/csshover.htc); }
 			<span></span>
 		</li>
 		<li class="{if $groups eq 'shop'}selected{/if}">
-			<a href="{$config->url_site}/shop.php">{#Shop#} ({$user->jetons} {$config->moneyname})</a>
+			<a href="{$config->url_site}/shop.php">{#Shop#} ({if $user->jetons eq null}0{else} {$user->jetons}{/if} {$config->moneyname})</a>
 			<span></span>
 		</li>
 		<!--
@@ -274,18 +271,17 @@ body { behavior: url(/js/csshover.htc); }
  {/if}
 </div>
 <!--Ne pas supprimer se input -->
-{if $notifs_count > 0}
 <script>
 function get(){
-	$.extend($.gritter.options, { 
-        position: 'bottom-left',
-        fade_in_speed: 'medium',
-        fade_out_speed: 2000,
-        time: 6000
+	jQuery.extend(jQuery.gritter.options, { 
+        position: 'bottom-left', // defaults to 'top-right' but can be 'bottom-left', 'bottom-right', 'top-left', 'top-right' (added in 1.7.1)
+        //fade_in_speed: 'medium', // how fast notifications fade in (string or int)
+        //fade_out_speed: 2000, // how fast the notices fade out
+		//time: 10000 // hang on the screen for...
 	});
-	$.get('{$config->url_site}/ajax/notif.php',function(data){
+	jQuery.get('{$config->url_site}/ajax/notif.php',function(data){
 	if(data){
-		$.gritter.add({
+		jQuery.gritter.add({
 			title: data.title,
 			text: data.text,
 			image : data.image,
@@ -296,7 +292,6 @@ function get(){
 }
 setInterval('get()', 5000);
 </script>
-{/if}
 <input type="hidden" value="{if isset($token)}{$token}{/if}" id="token"/>
 <div id="container">
 <div id="content" class="clear fix" style="position:relative; width:83%;">

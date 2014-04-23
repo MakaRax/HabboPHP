@@ -39,7 +39,7 @@ Pngfix.doPngImageFix();
 	<p class="copyright">{$config->name} est un projet indépendant, à but non lucratif &copy; 2010-2012.<br>
                          Habbo est une marque déposée de Sulake Corporation. Tous droits réservés à leur propriétaire respectif(s).<br>
                          Nous ne sommes pas approuvé, affiliés, ou offertes par Sulake Corporation LTD.<br>
-                         Powered by HabboPHP - Valentin & Robin.</p>
+                         Powered by HabboPHP - Valentin, Robin et Nicolas.</p>
 </div><!--end of footer-->
 
 </div>

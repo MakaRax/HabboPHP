@@ -43,13 +43,14 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
-    <script src="assets/js/w.js" type="text/javascript"></script>
-	<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+    <script src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script>
+    	 bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+    </script>
 						
 
 <script type="text/javascript">
 $(document).ready(function(){
-	new nicEditor().panelInstance('tai');    
 	$('.tabs a:first').tab('show')
 	var token = $('#token').val();
 	$("#paging_buttonn a").click(function(){
@@ -194,7 +195,7 @@ function postnews(image,title,shortdesc,content,comment,button_texte,button_disp
 		if(data == 1 ){
 			$('#shortdescnews').val('');
 			$('#titlenews').val('');
-			$('.nicEdit-main').html('');
+			$('#tai').html('');
 			$('#postnewsload').modal();
 			setTimeout("document.location.reload();",3000);
 		} else {
@@ -203,18 +204,18 @@ function postnews(image,title,shortdesc,content,comment,button_texte,button_disp
 	});
 }
 
-function editnews(id,title,shortdesc,content,token) {
+function editnews(id,title,shortdesc,content,comment,button_texte,button_display,button_link,token) {
 	var token = $('#token').val();
 	if(title=="") { alert('<?php echo $lang['NeedTitle']; ?>'); return false; }
 	if(shortdesc=="") { alert('<?php echo $lang['NeedShortDesc']; ?>'); return false; }
 	if(content=="<br>") { alert('<?php echo $lang['NeedContent']; ?>'); return false; }
-	$.post('ajax/editnews.php',{title:title,shortdesc:shortdesc,content:content,token:token,id:id},function(data){
+	$.post('ajax/editnews.php',{id:id,title:title,shortdesc:shortdesc,content:content,token:token,comment:comment,button_texte:button_texte,button_display:button_display,button_link:button_link,token:token},function(data){
 		if(data == 1 ){
 			//$('#shortdescnews').val('');
 			//$('#titlenews').val('');
-			//$('.nicEdit-main').html('');
+			//$('#tai').html('');
 			$('#ok').modal();
-			//setTimeout("document.location.reload();",);
+			//setTimeout("document.location.reload();",3000);
 		} else {
 			alert(data);
 		}
@@ -269,7 +270,6 @@ function setconfig(value,type) {
 				alert('<?php echo $lang['ErrorToken']; ?>');	
 				console.log(data);
 			}else
-			alert('<?php echo $lang['Error']; ?>');
 			console.log(data);
 		}
 	});

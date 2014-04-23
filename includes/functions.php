@@ -1,4 +1,5 @@
 <?php
+
 function safe($val, $type = 'SQL')
 {
 if($type == NULL) $type = 'SQL' ;
@@ -32,44 +33,50 @@ function redirection($url){
 	exit ;
 }
 
-function FullDate($str)
-		{
-			$H = date('H');
-			$i = date('i');
-			$s = date('s');
-			$m = date('m');
-			$d = date('d');
-			$Y = date('Y');
-			$j = date('j');
-			$n = date('n');
-			
-			switch ($str)
-				{
-					case "day":
-						$str = $j;
-						break;
-					case "month":
-						$str = $m;
-						break;
-					case "year":
-						$str = $Y;
-						break;
-					case "today":
-						$str = $d;
-						break;
-					case "full":
-						$str = date('d-m-Y H:i:s',mktime($H,$i,$s,$m,$d,$Y));
-						break;
-					case "datehc":
-						$str = "".$j."-".$n."-".$Y."";
-						break;
-					default:
-						$str = date('d-m-Y',mktime($m,$d,$Y));
-						break;
-				}
+	function FullDate($str)
+			{
+				$H = date('H');
+				$i = date('i');
+				$s = date('s');
+				$m = date('m');
+				$d = date('d');
+				$Y = date('Y');
+				$j = date('j');
+				$n = date('n');
 				
-			return $str;
-		}
+				switch ($str)
+					{
+						case "day":
+							$str = $j;
+							break;
+						case "month":
+							$str = $m;
+							break;
+						case "year":
+							$str = $Y;
+							break;
+						case "today":
+							$str = $d;
+							break;
+						case "full":
+							$str = date('d-m-Y H:i:s',mktime($H,$i,$s,$m,$d,$Y));
+							break;
+						case "datehc":
+							$str = "".$j."-".$n."-".$Y."";
+							break;
+						default:
+							$str = date('d-m-Y',mktime($m,$d,$Y));
+							break;
+					}
+					
+				return $str;
+			}
+			
+/*function youtube($y){
+$url = $y;
+parse_str( parse_url( $url, PHP_URL_QUERY ), $my_array_of_vars );
+return '<object wmode="opaque" width="210" height="136"><param name="wmode" value="http://www.youtube.com/v/'.$my_array_of_vars['v'].'?version=3&amp;hl=fr_FR" wmode="opaque"></param><param wmode="opaque" name="wmode" value="true"></param><param wmode="opaque" name="wmode" value="always"></param><embed src="http://www.youtube.com/v/'.$my_array_of_vars['v'].'?version=3&amp;hl=fr_FR" type="application/x-shockwave-flash" width="210" height="136" allowscriptaccess="always"  wmode="opaque" allowfullscreen="true"></embed></object>';
+} */
 
 function youtube($url,$return='embed',$width='',$height='',$rel=0){
 	$urls = parse_url($url);
@@ -121,46 +128,46 @@ function youtube($url,$return='embed',$width='',$height='',$rel=0){
 function bbcode($text)
 {
  
-	$text=safe($text,'HTML');
-	if(preg_match('#youtube#',$text)){
-	$youtube = preg_replace('!\[youtube\](.+)\[/youtube\]!isU', '$1',$text);
-	if(isset($youtube) && !empty($youtube)){$text = youtube($youtube,'embed');}
-	}
-	$text = preg_replace('!\[quote\](.+)\[/quote\]!isU', '<div class="citationforum">$1</div>', $text);
-	
-	$text = preg_replace("!\[quote\=(.+)\](.+)\[\/quote\]!isU", "<div class='citationforum'><strong>$1 :</strong><br>$2</div>", $text); 
-	
-	$text = preg_replace('!\[b\](.+)\[/b\]!isU', '<strong>$1</strong>', $text);
-	$text = preg_replace('!\[i\](.+)\[/i\]!isU', '<em>$1</em>', $text);
-	$text = preg_replace('!\[u\](.+)\[/u\]!isU', '<span style="text-decoration:underline;">$1</span>', $text);
-	$text = preg_replace('!\[center\](.+)\[/center\]!isU', '<p tyle="text-align:center;margin:0px;padding:0px;">$1</p>', $text);
-	$text = preg_replace('!\[right\](.+)\[/right\]!isU', '<p style="text-align:right;margin:0px;padding:0px;">$1</p>', $text);
-	$text = preg_replace('!\[left\](.+)\[/left\]!isU', '<p style="text-align:left;margin:0px;padding:0px;">$1</p>', $text);
-	
-	$text = preg_replace('!\[titre\](.+)\[/titre\]!isU', '<h3>$1</h3>',$text);
-	
-	$text = preg_replace('!\[email\](.+)\[/email\]!isU', '<a href="mailto:$1">$1</a>',$text);
-	
-	$text = preg_replace('!\[img\](.+)\[/img\]!isU', '<img src="$1" border="0">',$text);
-	
-	$text = preg_replace('!\[url\](.+)\[/url\]!isU', '<a href="$1" target="_blank">$1</a>',$text);
-	
-	$text = preg_replace('!\[facebook\](.+)\[/facebook\]!isU', '<a href="http://facebook.com/$1" class="uibutton confirm" target="_blank">Facebook</a>',$text);
-	
-	$text = preg_replace('!\[red\](.+)\[/red\]!isU', '<font color="red">$1</font>',$text);
-	$text = preg_replace('!\[blue\](.+)\[/blue\]!isU', '<font color="blue">$1</font>',$text);
-	$text = preg_replace('!\[green\](.+)\[/green\]!isU', '<font color="green">$1</font>',$text);
-	$text = preg_replace('!\[orange\](.+)\[/orange\]!isU', '<font color="orange">$1</font>',$text);
-	$text = preg_replace('!\[pink\](.+)\[/pink\]!isU', '<font color="darkpink">$1</font>',$text);
-	
-	$text = preg_replace('!\[small\](.+)\[/small\]!isU', '<font style="font-size:8px;">$1</font>',$text);
-	$text = preg_replace('!\[medium\](.+)\[/medium\]!isU', '<font style="font-size:12px;">$1</font>',$text);
-	$text = preg_replace('!\[large\](.+)\[/large\]!isU', '<font style="font-size:18px;">$1</font>',$text);
-	
-	
-	$text = preg_replace('!\[br\]!isU', '<br />',$text);
-	
-	return($text);
+$text=safe($text,'HTML');
+if(preg_match('#youtube#',$text)){
+$youtube = preg_replace('!\[youtube\](.+)\[/youtube\]!isU', '$1',$text);
+if(isset($youtube) && !empty($youtube)){$text = youtube($youtube,'embed');}
+}
+$text = preg_replace('!\[quote\](.+)\[/quote\]!isU', '<div class="citationforum">$1</div>', $text);
+
+$text = preg_replace("!\[quote\=(.+)\](.+)\[\/quote\]!isU", "<div class='citationforum'><strong>$1 :</strong><br>$2</div>", $text); 
+
+$text = preg_replace('!\[b\](.+)\[/b\]!isU', '<strong>$1</strong>', $text);
+$text = preg_replace('!\[i\](.+)\[/i\]!isU', '<em>$1</em>', $text);
+$text = preg_replace('!\[u\](.+)\[/u\]!isU', '<span style="text-decoration:underline;">$1</span>', $text);
+$text = preg_replace('!\[center\](.+)\[/center\]!isU', '<p tyle="text-align:center;margin:0px;padding:0px;">$1</p>', $text);
+$text = preg_replace('!\[right\](.+)\[/right\]!isU', '<p style="text-align:right;margin:0px;padding:0px;">$1</p>', $text);
+$text = preg_replace('!\[left\](.+)\[/left\]!isU', '<p style="text-align:left;margin:0px;padding:0px;">$1</p>', $text);
+
+$text = preg_replace('!\[titre\](.+)\[/titre\]!isU', '<h3>$1</h3>',$text);
+
+$text = preg_replace('!\[email\](.+)\[/email\]!isU', '<a href="mailto:$1">$1</a>',$text);
+
+$text = preg_replace('!\[img\](.+)\[/img\]!isU', '<img src="$1" border="0">',$text);
+
+$text = preg_replace('!\[url\](.+)\[/url\]!isU', '<a href="$1" target="_blank">$1</a>',$text);
+
+$text = preg_replace('!\[facebook\](.+)\[/facebook\]!isU', '<a href="http://facebook.com/$1" class="uibutton confirm" target="_blank">Facebook</a>',$text);
+
+$text = preg_replace('!\[red\](.+)\[/red\]!isU', '<font color="red">$1</font>',$text);
+$text = preg_replace('!\[blue\](.+)\[/blue\]!isU', '<font color="blue">$1</font>',$text);
+$text = preg_replace('!\[green\](.+)\[/green\]!isU', '<font color="green">$1</font>',$text);
+$text = preg_replace('!\[orange\](.+)\[/orange\]!isU', '<font color="orange">$1</font>',$text);
+$text = preg_replace('!\[pink\](.+)\[/pink\]!isU', '<font color="darkpink">$1</font>',$text);
+
+$text = preg_replace('!\[small\](.+)\[/small\]!isU', '<font style="font-size:8px;">$1</font>',$text);
+$text = preg_replace('!\[medium\](.+)\[/medium\]!isU', '<font style="font-size:12px;">$1</font>',$text);
+$text = preg_replace('!\[large\](.+)\[/large\]!isU', '<font style="font-size:18px;">$1</font>',$text);
+
+
+$text = preg_replace('!\[br\]!isU', '<br />',$text);
+
+return($text);
 
 }  
 
@@ -173,6 +180,12 @@ function generer_token($nom = '')
 	$_SESSION[$nom.'_token_time'] = time();
 	return $token;
 }
+
+
+//**************************************************************************//
+//**************************************************************************//
+//**************************************************************************//
+
 
 //Cette fonction vérifie le token
 //Vous passez en argument le temps de validité (en secondes)
@@ -198,6 +211,12 @@ function verifier_token($referer = '', $nom = '')
 		return false;
 	}
 } 
+
+
+function false_token(){
+	
+}
+
 
 //cette fonction récupère la dernière page
 
@@ -259,86 +278,74 @@ function selectmod($username)
 	return $return;
 }
 
-$smtp = array(
-	'Gmail' 	=>	array('host' => 'smtp.gmail.com','port' => '465','AUTH' => 'TLS'),
-	'Hotmail' 	=> 	array('host' => 'smtp.live.com','port'=>'25','AUTH'=>'SSL'),
-	'Free' 		=>	array('host' => 'smtp.free.fr','port' => '25','AUTH' => 'SSL')
-);
+	$smtp = array(
+		'Gmail' 	=>	array('host' => 'smtp.gmail.com','port' => '465','AUTH' => 'TLS'),
+		'Hotmail' 	=> 	array('host' => 'smtp.live.com','port'=>'25','AUTH'=>'SSL'),
+		'Free' 		=>	array('host' => 'smtp.free.fr','port' => '25','AUTH' => 'SSL')
+	);
 
 function TicketRefresh($id)
 {
 	
 	$base = uniqid("HABBOPHP-" . rand(0,99)) . "-HABBOPHP";
-	$user_ticket = ORM::for_table('users')->select('auth_ticket')->find_one($id);
-	$user_ticket->set(array(
-		'auth_ticket' => $base
-	));
-	$user_ticket->save();
+	$request = mysql_query("UPDATE users SET auth_ticket = '".$base."' WHERE id = '".$id."' LIMIT 1");
 	return $base;
 }
 
 
-function GenerateRandom($type = "sso", $length = 0){
-	switch($type){
-		case "sso":
-			$data = GenerateRandom("random",8)."-".GenerateRandom("random",4)."-".GenerateRandom("random",4)."-".GenerateRandom("random",4)."-".GenerateRandom("random",12);
-			return $data;
-		break; 
-		case "app_key":
-			$data = strtoupper(GenerateRandom("random",32)).".resin-fe-".GenerateRandom("random_number",1);
-			return $data;
-		break; 
-		case "random":
-			$data = "";
-			$possible = "0123456789abcdef"; 
-			$i = 0;
-			while ($i < $length) { 
-				$char = substr($possible, mt_rand(0, strlen($possible)-1), 1);
-				$data .= $char;
-				$i++;
-			}
-			return $data;
-		break; 
-		case "random_number":
-			$data = "";
-			$possible = "0123456789"; 
-			$i = 0;
-			while ($i < $length) { 
-				$char = substr($possible, mt_rand(0, strlen($possible)-1), 1);
-				$data .= $char;
-				$i++;
-			}
-			return $data;
-		break;
+		function GenerateRandom($type = "sso", $length = 0)
+	     {
+		switch($type)
+		{
+			case "sso":
+				$data = GenerateRandom("random",8)."-".GenerateRandom("random",4)."-".GenerateRandom("random",4)."-".GenerateRandom("random",4)."-".GenerateRandom("random",12);
+				return $data;
+			break; 
+			case "app_key":
+				$data = strtoupper(GenerateRandom("random",32)).".resin-fe-".GenerateRandom("random_number",1);
+				return $data;
+			break; 
+			case "random":
+				$data = "";
+				$possible = "0123456789abcdef"; 
+				$i = 0;
+				while ($i < $length) { 
+					$char = substr($possible, mt_rand(0, strlen($possible)-1), 1);
+					$data .= $char;
+					$i++;
+				}
+				return $data;
+			break; 
+			case "random_number":
+				$data = "";
+				$possible = "0123456789"; 
+				$i = 0;
+				while ($i < $length) { 
+					$char = substr($possible, mt_rand(0, strlen($possible)-1), 1);
+					$data .= $char;
+					$i++;
+				}
+				return $data;
+			break;
+		}
 	}
-}
+		
 			
-function UpdateSSO($id){       
-	$myticket = uniqid("HABBOPHP-" . rand(0,99)) . "-HABBOPHP";
-	$ticket = ORM::for_table('user_tickets')->where('userid', $id)->find_one();
-	$user_ticket = ORM::for_table('users')->select('auth_ticket')->find_one($id);
-	if($ticket->count() == 1){
-		$user_ticket->set(array(
-			'auth_ticket' => $myticket
-		));
-		$ticket->set(array(
-			'sessionticket' => $myticket,
-			'ipaddress' => $_SERVER['REMOTE_ADDR']
-		));
-	} else {
-		$user_ticket->set(array(
-			'auth_ticket' => $myticket
-		));
-		$ticket = ORM::for_table('users_ticket')->create();
-		$ticket->set(array(
-			'userid' => $id,
-			'sessionticket' => $myticket,
-			'ipaddress' => $_SERVER['REMOTE_ADDR']
-		));
-	}
-	$user_ticket->save();
-	$ticket->save();
-	return $myticket;
+		function UpdateSSO($id)
+	    {       
+	
+	       
+			$myticket = GenerateRandom();
+			if(mysql_num_rows(mysql_query("SELECT * FROM user_tickets WHERE userid = '".$id."'")) > 0)
+					{
+					$remote_ip=safe($_SERVER["REMOTE_ADDR"],'SQL');
+					mysql_query("UPDATE user_tickets SET sessionticket = '".$myticket."' WHERE userid = '".$id."'") or die(mysql_error()); ;
+					mysql_query("UPDATE user_tickets SET ipaddress = '".safe($_SERVER["REMOTE_ADDR"],'SQL')."' WHERE userid = '".$id."'") or die(mysql_error()); ;
+					} else {
+					mysql_query("INSERT INTO user_tickets (userid,sessionticket,ipaddress) VALUES ('".$id."','".$myticket."','".safe($_SERVER["REMOTE_ADDR"],'SQL')."')") or die(mysql_error());
+					}
+
+			return $myticket;
 }
 
 function checked($source,$compare,$input){
@@ -346,17 +353,27 @@ function checked($source,$compare,$input){
 		echo 'checked="checked"' ;
 	if($source == $compare && $input == 'select')
 		echo 'selected="selected"' ;
+	
+	
 }
 
 function VersionIsLast(){
 	//Get last version
 	if(defined('VERSION')){
 		$data = file_get_contents('http://release.habbophp.com');
-
+		
 		//Compare
 		if(VERSION == $data)
 			return true;
 		}
 	return false;
 }
+
+function HotelIsOnline(){
+	$sql = ORM::for_table('server_status')->select('status')->find_one();
+	if($sql['status'] == 1)
+		return true;
+	return false;
+}
+
 ?>
