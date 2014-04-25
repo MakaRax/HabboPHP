@@ -172,7 +172,7 @@ body { behavior: url(/js/csshover.htc); }
 			<span></span>
 		</li>
 		<li class="{if $groups eq 'shop'}selected{/if}">
-			<a href="{$config->url_site}/shop.php">{#Shop#} ({$user->jetons} {$config->moneyname})</a>
+			<a href="{$config->url_site}/shop.php">{#Shop#} ({if $user->jetons eq null}0{else} {$user->jetons}{/if} {$config->moneyname})</a>
 			<span></span>
 		</li>
 		<!--

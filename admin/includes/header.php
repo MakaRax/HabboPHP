@@ -22,7 +22,7 @@ $pagename=$parts[count($parts) - 1];
     <meta name="author" content="">
 
     <!-- Le styles -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://bootswatch.com/2/flatly/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
@@ -66,12 +66,17 @@ $pagename=$parts[count($parts) - 1];
             <ul class="nav">
               <?php include "includes/menu.php"; ?>
             </ul>
+            <ul class="nav pull-right">
+              <li>
+                <a href="<?php echo $config->url_site; ?>">Retourner sur <?php echo $config->name; ?> &raquo;</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
     </div>
 
     <div class="container">
-    
+    <?php if($config->maintenance == "true"){ ?><div class="alert alert-error"><h4>Attention</h4>La maintenance est activée ! <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button></div><?php } ?>
    
     <input type="hidden" name="token" id="token" value="<?php  echo Tools::generate_token() ;?>"/>

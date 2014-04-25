@@ -43,9 +43,15 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
+<<<<<<< HEAD
+    <script src="http://js.nicedit.com/nicEdit-latest.js"></script>
+    <script>
+    	 bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+=======
     <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
     <script>
     	tinymce.init({selector:'textarea'});
+>>>>>>> 76089e7ab762f43b1f2c4fdf640ea94eb5019966
     </script>
 						
 
@@ -195,7 +201,7 @@ function postnews(image,title,shortdesc,content,comment,button_texte,button_disp
 		if(data == 1 ){
 			$('#shortdescnews').val('');
 			$('#titlenews').val('');
-			$('.nicEdit-main').html('');
+			$('#tai').html('');
 			$('#postnewsload').modal();
 			setTimeout("document.location.reload();",3000);
 		} else {
@@ -204,18 +210,18 @@ function postnews(image,title,shortdesc,content,comment,button_texte,button_disp
 	});
 }
 
-function editnews(id,title,shortdesc,content,token) {
+function editnews(id,title,shortdesc,content,comment,button_texte,button_display,button_link,token) {
 	var token = $('#token').val();
 	if(title=="") { alert('<?php echo $lang['NeedTitle']; ?>'); return false; }
 	if(shortdesc=="") { alert('<?php echo $lang['NeedShortDesc']; ?>'); return false; }
 	if(content=="<br>") { alert('<?php echo $lang['NeedContent']; ?>'); return false; }
-	$.post('ajax/editnews.php',{title:title,shortdesc:shortdesc,content:content,token:token,id:id},function(data){
+	$.post('ajax/editnews.php',{id:id,title:title,shortdesc:shortdesc,content:content,token:token,comment:comment,button_texte:button_texte,button_display:button_display,button_link:button_link,token:token},function(data){
 		if(data == 1 ){
 			//$('#shortdescnews').val('');
 			//$('#titlenews').val('');
-			//$('.nicEdit-main').html('');
+			//$('#tai').html('');
 			$('#ok').modal();
-			//setTimeout("document.location.reload();",);
+			//setTimeout("document.location.reload();",3000);
 		} else {
 			alert(data);
 		}
@@ -270,7 +276,6 @@ function setconfig(value,type) {
 				alert('<?php echo $lang['ErrorToken']; ?>');	
 				console.log(data);
 			}else
-			alert('<?php echo $lang['Error']; ?>');
 			console.log(data);
 		}
 	});

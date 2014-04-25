@@ -111,7 +111,7 @@ require	$path.'class/groups.class.php' ;
 require $path.'class/class.orm.php';
 
 /*+===================================+
-|   Connexion to ORM  database        |
+|   Connection to ORM database        |
 +===================================+*/
 
 ORM::configure('mysql:host='.HOST.';dbname='.NAME_DB.'');
@@ -120,11 +120,10 @@ ORM::configure('password', ''.PASSWORD_DB.'');
 ORM::configure('drivers_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 
 /*+===================================+
-|   Connexion to database             |
+|   Connection to database             |
 +===================================+*/
-
+$pdo = new PDO('mysql:host='.HOST.';dbname='.NAME_DB.'', USER_DB, PASSWORD_DB);
 $Mysql = new Mysql(HOST,USER_DB,PASSWORD_DB,NAME_DB) ;
-
 mysql_query("SET NAMES UTF8");
 
 /*+===================================+

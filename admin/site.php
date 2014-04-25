@@ -50,8 +50,8 @@ include "includes/header.php";
 		<?php
 			$per_page = 5;
 			$sql = "select * from habbophp_news_images";
-			$rsd = mysql_query($sql);
-			$count = mysql_num_rows($rsd);
+			$rsd = $db->query($sql);
+			$count = $db->NumRowsC();
 			$pages = ceil($count/$per_page);
 		?>
 	
@@ -146,7 +146,7 @@ include "includes/header.php";
           
           <div class="form-actions">
             <button type="button" onclick="postnews($('#linkimagenews').val(),$('#titlenews').val(),$('#shortdescnews').val(),$('.nicEdit-main').html(),$('#comments').val(),$('#boutton_texte').val(),$('#button_display').val(),$('#button_link').val())" class="btn btn-primary"><?php echo $lang['SendMyNews']; ?></button>
-          </div>
+	  </div>
         </fieldset>
       </div>
 
