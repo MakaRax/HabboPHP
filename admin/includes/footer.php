@@ -43,15 +43,9 @@
     <script src="assets/js/bootstrap-carousel.js"></script>
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/application.js"></script>
-<<<<<<< HEAD
     <script src="http://js.nicedit.com/nicEdit-latest.js"></script>
     <script>
     	 bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-=======
-    <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-    <script>
-    	tinymce.init({selector:'textarea'});
->>>>>>> 76089e7ab762f43b1f2c4fdf640ea94eb5019966
     </script>
 						
 
