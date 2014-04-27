@@ -10,18 +10,12 @@
 		
 		if(!defined('VERSION')){
 			define('VERSION','Version inconnue');
-<<<<<<< HEAD
 		}
 		if(!VersionIsLast()){
 		  echo'<div class="alert alert-error"><b>Attention</b> : Une mise à jour est disponible : <a href="https://github.com/habbophp/HabboPHP">HabboPHP '. file_get_contents('http://release.habbophp.com') .'</a></div>';
 		} else {
 		  echo '<div class="alert alert-success">Vous disposez de la dernière version d\'HabboPHP</div>';
 		}
-		
-=======
-		}
-			echo'<div class="alert alert-error"><b>Attention</b> : Le site de HabboPHP est indisponible.</div>';
->>>>>>> 76089e7ab762f43b1f2c4fdf640ea94eb5019966
 		?>
 		<div class="alert alert-info">Votre version HabboPHP : <b><?php echo VERSION ; ?></b></div>
 	</div>
