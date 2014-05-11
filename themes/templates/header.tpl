@@ -290,7 +290,7 @@ function get(){
 	}
 	},"json");
 }
-setInterval('get()', 5000);
+setInterval('get()', 15000);
 </script>
 <input type="hidden" value="{if isset($token)}{$token}{/if}" id="token"/>
 <div id="container">
