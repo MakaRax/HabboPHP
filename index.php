@@ -58,4 +58,5 @@ if(isset($_GET['error'])){
 $tpl->assign('token',Tools::generate_token());
 //L'index-v2 est supprimé suite à des problèmes de performances, si vous êtes en local, vous pouvez l'utiliser, sinon ne l'utilisez pas.
 $tpl->display('index.tpl');
+//$tpl->display('index-v2.tpl');
 ?>
