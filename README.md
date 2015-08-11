@@ -1,6 +1,19 @@
 HabboPHP 2.3
 ==============
 
+## NOTICE ##
+HabboPHP is officially found and created by Nicoluc4 and Robin,
+due to a DMCA takedown of Sulake, the whole development stopped.
+But, from now one, there is a new team that will be updating HabboPHP to newer versions!
+
+For further contact, please mail to info@sarlcommunities.com
+
+Sincerely,
+
+Arne, new owner of HabboPHP.
+
+###########
+
 Redesign of the architecture
 
 ## Comment installer les modes de paiements
