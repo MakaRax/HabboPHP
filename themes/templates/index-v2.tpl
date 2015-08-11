@@ -40,33 +40,29 @@
 
 <div id="change-password-form" class="overlay-dialog" style="display: none;">
     <div id="change-password-form-container" class="clearfix form-container">
-        <h2 id="change-password-form-title" class="bottom-border">Mot de passe oublié?</h2>
+        <h2 id="change-password-form-title" class="bottom-border">Forgot password?</h2>
         <div id="change-password-form-content" style="display: none;">
             <form method="post" action="" id="forgotten-pw-form">
                 <input type="hidden" name="page" value="/?changePwd=true" />
-                <span>Merci d'indiquer ton adresse email d'inscription à Habbo</span>
+                <span>Enter your account email for sending the password reset link.</span>
                 <div id="email" class="center bottom-border">
 				<input type="hidden" name="token" id="token" value="{$token}"/>
                     <input type="text" id="change-password-email-address2" name="emailAddress" value="" class="email-address" maxlength="48"/>
-                    <div id="change-password-error-container" class="error" style="display: none;">Indique une adresse email valide</div>
+                    <div id="change-password-error-container" class="error" style="display: none;">The email adress you entered is not valid.</div>
                 </div>
             </form>
             <div class="change-password-buttons">
               
-                <a href="#" id="change-password-submit-button" class="new-button"><b>Envoyer un email</b><i></i></a>
-            </div>
-        </div>
-        <div id="change-password-email-sent-notice" style="display: none;">
-            <div class="bottom-border">
-                <span>Un message contenant un lien te permettant de changer ton mot de passe t'a été envoyé par email.<br>
+                <a href="#" id="change-password-submit-button" class="new-button"><b>Send email</b><i></i></a>
+            </div>A message has been sent to your adress.<br>
 <br>
 
-Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
+Got nothing? Check your spam folder!</span>
                 <div id="email-sent-container"></div>
             </div>
             <div class="change-password-buttons">
               
-                <a href="#" id="change-password-success-button" class="new-button"><b>Fermer</b><i></i></a>
+                <a href="#" id="change-password-success-button" class="new-button"><b>Close</b><i></i></a>
             </div>
         </div>
     </div>
@@ -115,18 +111,18 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
             <label for="credentials-email">Email</label>
             <input tabindex="2" type="text" name="username" id="credentials-email" value="">
             <input tabindex="5" type="checkbox" name="_login_remember_me" id="credentials-remember-me">
-            <label for="credentials-remember-me" class="sub-label">Garder ma session active</label>
+            <label for="credentials-remember-me" class="sub-label">Remember me</label>
         </div>
 
         <div id="login-column-2">
-            <label for="credentials-password">Mot de passe</label>
+            <label for="credentials-password">Password</label>
             <input tabindex="3" type="password" name="password" id="credentials-password">
-            <a href="#" id="forgot-password" class="sub-label">Mot de passe oublié?</a>
+            <a href="#" id="forgot-password" class="sub-label">Forgot password?</a>
         </div>
 
         <div id="login-column-3">
             <input type="submit" value="Login" style="margin: -10000px; position: absolute;">
-            <a href="#" tabindex="4" class="button" id="credentials-submit"><b></b><span>Entrer</span></a>
+            <a href="#" tabindex="4" class="button" id="credentials-submit"><b></b><span>Login</span></a>
             
         </div>
 
@@ -171,7 +167,7 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
   	if (!$(document.body).hasClassName('process-template')) { Rounder.init(); }
 </script>
 <a class="fb_button fb_button_large" onclick="assistedLogin(FB); return false;">
-    <span class="fb_button_text">Entre avec Facebook</span>
+    <span class="fb_button_text">Login with Facebook</span>
 </a>
 
 
@@ -194,20 +190,20 @@ Si tu ne le trouves pas, jette un œil à ta boîte spam!</span>
 <noscript>
 <div id="alert-javascript-container">
     <div id="alert-javascript-title">
-        JavaScript support manquant
+        JavaScript support is missing
     </div>
     <div id="alert-javascript-text">
-        Javascript est désactivé sur ton navigateur. Merci de l'activer ou passer à un navigateur qui contient Javascript pour utiliser Habbo :)
+         You do not have JavaScript installed or enabled, please enable or install javascript.
     </div>
 </div>
 </noscript>
 
 <div id="alert-cookies-container" style="display:none">
     <div id="alert-cookies-title">
-        Cookies requis
+        Cookies are required!
     </div>
     <div id="alert-cookies-text">
-        Ton navigateur internet refuse les cookies. Pour jouer à Habbo tu dois modifier ce paramètre et les autoriser.
+        We are using cookies, so please enable these in your browser settings.
     </div>
 </div>
 <script type="text/javascript">
