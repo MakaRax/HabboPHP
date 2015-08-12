@@ -36,10 +36,8 @@ Pngfix.doPngImageFix();
 	{$config->adsSlide}
 	{$config->adsPopup}
 	<p class="footer-links"><a href="https://help.habbo.se" target="_new">{#Help#}</a> | <a href="http://habbophp.com" title="HabboPHP" target="_new">HabboPHP</a> | <a href="https://help.habbo.se/home" target="_new">FAQ</a></p>
-	<p class="copyright">{$config->name} est un projet indépendant, à but non lucratif &copy; 2010-2012.<br>
-                         Habbo est une marque déposée de Sulake Corporation. Tous droits réservés à leur propriétaire respectif(s).<br>
-                         Nous ne sommes pas approuvé, affiliés, ou offertes par Sulake Corporation LTD.<br>
-                         Powered by HabboPHP - Valentin, Robin et Nicolas.</p>
+	<p class="copyright">{$config->name} Hotel &copy; 2010-2012.<br>
+                         Powered by HabboPHP - by Arne.</p>
 </div><!--end of footer-->
 
 </div>
