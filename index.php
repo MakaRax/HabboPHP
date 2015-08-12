@@ -2,8 +2,8 @@
 #|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 #|                                                                        #|
 #|         HABBOPHP - http://habbophp.com                                 #|
-#|         Copyright © 2012 Valentin & Robin. All rights reserved.        #|
-#|																		  #|
+#|         Copyright © 2012 Arne Van Daele. All rights reserved.          #|
+#|									  #|									  #|
 #|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 
 session_start();
