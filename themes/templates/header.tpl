@@ -146,17 +146,17 @@ body { behavior: url(/js/csshover.htc); }
 <div id="subnavi"> 			            <div id="subnavi-search" style="text-align:left;"> 
                 <div id="subnavi-search-upper"> 
                 <ul id="subnavi-search-links">
-                    <li><a href="{$config->url_site}/help" target="_new">Questions fréquentes</a></li> 
+                    <li><a href="{$config->url_site}/help" target="_new">Helpdesk</a></li> 
 					<li>
 					<form method="post" action="{$config->url_site}/logout.php">
-                     <button class="link" id="signout" type="submit"><span>Quitter</span></button>
+                     <button class="link" id="signout" type="submit"><span>Log Out</span></button>
                     </form>
 					</li> 
 				</ul> 
                 </div> 
             </div> 
             <div id="to-hotel"> 
-					   <a href="client.php" class="new-button green-button" target="5582b925d39a3b57fc3e178ad726bd2798015099" onclick="HabboClient.openOrFocus(this); return false;"><b>{#Enterin#} {$config->name}</b><i></i></a> 
+					   <a href="client.php" class="new-button green-button" target="5582b925d39a3b57fc3e178ad726bd2798015099" onclick="HabboClient.openOrFocus(this); return false;"><b>Enter {$config->name}</b><i></i></a> 
 						
 						</div>            
         </div>
