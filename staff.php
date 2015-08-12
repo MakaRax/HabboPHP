@@ -3,7 +3,7 @@
 #|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 #|                                                                        #|
 #|         HABBOPHP - http://habbophp.com                                 #|
-#|         Copyright © 2012 Valentin & Robin. All rights reserved.        #|
+#|         Copyright © 2012 Arne.             All rights reserved.        #|
 #|																		  #|
 #|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|#|
 
@@ -14,17 +14,17 @@ $tpl->assign('selected','selected');
 $tpl->display('header.tpl');
 
 
-//Liste des rangs
-// Pour ajouter un rang ajoutez cette ligne : array('Nom' => 'Modérateur' , 	'Rank' => '10' , 'Couleur' => 'darkblue'), à l'intérieur du array $rank
+//Rank list
+// Adding new ranks : array('Nom' => 'RANK NAME' , 	'Rank' => 'RANKID' , 'Couleur' => 'COLOUR'), inside the $rank array.
 
 $rank = array(
-	array('Nom' => 'Fondateur' , 	'Rank' => '7' , 'Couleur' => 'blue'),
-	array('Nom' => 'Modérateur' , 	'Rank' => '6' , 'Couleur' => '#000'),
-	array('Nom' => 'Codeur' , 		'Rank' => '5' , 'Couleur' => 'red')
+	array('Nom' => 'Administrator' , 	'Rank' => '7' , 'Couleur' => 'blue'),
+	array('Nom' => 'Manager' , 	'Rank' => '6' , 'Couleur' => '#000'),
+	array('Nom' => 'Administrator' , 		'Rank' => '5' , 'Couleur' => 'red')
 ); 
 
-foreach($rank as $ranks){ $minRanks[] = $ranks['Rank'] ; } //On fait un array des ranks
-array_multisort($minRanks,SORT_NUMERIC); // On les tri par ordre croissant
+foreach($rank as $ranks){ $minRanks[] = $ranks['Rank'] ; } //Creating ranks array
+array_multisort($minRanks,SORT_NUMERIC); // Ordering all ranks
 $query = ORM::for_table("users")->where_raw("rank>=".intval($minRanks[0])."")->find_many();
 $tpl->assign('user_info',$query);
 $tpl->assign('rank',$rank);
