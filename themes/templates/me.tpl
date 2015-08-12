@@ -25,7 +25,7 @@
 
 <div class="enter-hotel-btn">
     <div class="open enter-btn">
-            <a href="{$config->url_site}/client.php" target="38bad4312a9f27ce591f69f49725def36283fe99" onclick="HabboClient.openOrFocus(this); return false;">{#Enterhotel#}<i></i></a>
+            <a href="{$config->url_site}/client.php" target="38bad4312a9f27ce591f69f49725def36283fe99" onclick="HabboClient.openOrFocus(this); return false;">Enter Hotel<i></i></a>
         <b></b>
     </div>
 </div>
