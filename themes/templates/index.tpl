@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>{$config->name}: Crée ton avatar, décore ton appart, chatte et fais-toi plein d'amis.</title>
+	<title>{$config->name}: Create your avatar and have fun!</title>
 
 <script type="text/javascript">
 var andSoItBegins = (new Date()).getTime();
@@ -60,7 +60,7 @@ try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {}
 body { behavior: url(/js/csshover.htc); }
 </style>
 <![endif]-->
-<meta name="build" content="HabboPHP" />
+<meta name="build" content="HabboPHP-1.0" />
 </head>
 
 
@@ -70,7 +70,7 @@ body { behavior: url(/js/csshover.htc); }
 
 {if isset($smarty.get.error) && $smarty.get.error eq 'FileConfigExiste'}
 	<script>
-		alert('Le fichier de configuration est déjà configuré. Supprimez le si vous voulez refaire une installation');
+		alert('Install file is not yet deleted or renamed!!!');
 	</script>
 {/if}
 
@@ -184,17 +184,17 @@ HabboView.add( function() {
 
                 <div id="login-form-email">
                     <label for="login-username"
-                           class="login-text">{#Username#} Ou Mail</label>
+                           class="login-text">Username or email</label>
                     <input tabindex="3" type="text" id="login-username" class="login-field" value="{if isset($smarty.post.username)}{$smarty.post.username}{/if}" name="username"                          maxlength="48"/>
                     
     <input tabindex="6" type="checkbox" name="login_remember_me" id="login-remember-me"
                            value="true"/>
-                    <label for="login-remember-me">Garder ma session activé</label>
+                    <label for="login-remember-me">Remember me</label>
 
 <div id="landing-remember-me-notification" class="bottom-bubble" style="display:none;">
 	<div class="bottom-bubble-t"><div></div></div>
 	<div class="bottom-bubble-c">
-                En cochant cette case tu resteras connecté à Habbo jusqu'à ce que tu choisisses de te déconnecter.
+                When selected, you will stay logged in until you log out yourself.
 	</div>
 	<div class="bottom-bubble-b"><div></div></div>
 </div>
@@ -202,7 +202,7 @@ HabboView.add( function() {
                 </div>
 
                 <div id="login-form-password">
-                    <label for="login-password" class="login-text">{#password#}</label>
+                    <label for="login-password" class="login-text">Password</label>
                     <input tabindex="4" type="password" class="login-field" name="password"
                            id="login-password" maxlength="32"/>
 
@@ -406,11 +406,11 @@ Pngfix.doPngImageFix();
 </script>
 <![endif]-->
 <div class="new_and_improved" id="footer">
-	<p class="footer-links"><span style="color: rgb(255, 0, 0);"><strong><span style="font-family: Arial;">ATTENTION: </span><span style="color: rgb(255, 255, 255);"><span style="font-family: Arial;">N'utilise pas les même identifiant que ton compte HABBO!</span></span></strong></span></span></p>
+	<p class="footer-links"><span style="color: rgb(255, 0, 0);"><strong><span style="font-family: Arial;">ATTENTION: </span><span style="color: rgb(255, 255, 255);"><span style="font-family: Arial;">THIS IS NOT HABBO HOTEL, THIS IS A FREE COPY OF HABBO!</span></span></strong></span></span></p>
 <div id="age-recommendation"></div>
 
     <div id="sulake-logo"><a href="http://www.sulake.com"></a></div>
-	<p class="copyright">&copy; <a style="color:white" href="http://habbophp.com">HabboPHP CMS</a><br/>2009 - 2012 HABBOBETA, Nous ne sommes pas lié ou autorisé par Sulake Corporation Oy. HABBO est une marque déposée de Sulake Corporation Oy dans l'Union Européenne, les Etats-Unis, le Japon, la république populaire de Chine et autres juridictions. Tous droits réservés.</p>
+	<p class="copyright">&copy; <a style="color:white" href="http://habbophp.com">HabboPHP Beta</a><br/>2012 - 2015 Habbo Hotel</br>HabboPHP, founded by Valentin, developed by Arne</p>
 </div>
 
     </div>
